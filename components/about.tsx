@@ -8,7 +8,10 @@ const boxVariants = {
     visible: {
         opacity: 1,
         x: 0,
-        transition: { duration: 0.6, ease: "easeOut", staggerChildren: 0.1 }
+        transition: {
+            staggerChildren: 0.1,
+            default: { duration: 0.6, ease: "easeOut" }
+        }
     }
 };
 

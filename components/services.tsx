@@ -57,14 +57,14 @@ const cardVariants = {
             type: "spring",
             stiffness: 100,
             damping: 15,
-        }
+        } as const
     },
     hover: {
         y: -10,
         scale: 1.03,
         borderColor: "var(--primary)",
         boxShadow: "0 20px 40px -15px rgba(255, 179, 11, 0.15)", // Amber glow
-        transition: { type: "spring", stiffness: 300 }
+        transition: { type: "spring", stiffness: 300 } as const
     }
 };
 
