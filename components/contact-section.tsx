@@ -51,8 +51,14 @@ export function ContactSection() {
         <section id="contact" className="py-24 bg-background relative overflow-hidden">
             {/* Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-                <div className="absolute top-1/4 -left-64 w-96 h-96 bg-primary/10 rounded-full blur-[100px]" />
-                <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
+                <div
+                    className="absolute top-1/4 -left-64 w-96 h-96 rounded-full opacity-20"
+                    style={{ background: "radial-gradient(circle, rgba(var(--primary-rgb), 0.5) 0%, transparent 70%)" }}
+                />
+                <div
+                    className="absolute bottom-1/4 -right-64 w-96 h-96 rounded-full opacity-10"
+                    style={{ background: "radial-gradient(circle, rgba(var(--primary-rgb), 0.5) 0%, transparent 70%)" }}
+                />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
@@ -175,6 +181,7 @@ export function ContactSection() {
                                                     animate={{ height: "auto", opacity: 1 }}
                                                     exit={{ height: 0, opacity: 0 }}
                                                     transition={{ duration: 0.3 }}
+                                                    style={{ overflow: "hidden" }}
                                                 >
                                                     <div className="p-6 pt-0 text-muted-foreground leading-relaxed">
                                                         {faq.answer}
@@ -209,7 +216,8 @@ export function ContactSection() {
                             initial={{ scale: 0, opacity: 1 }}
                             animate={{ scale: [0, 1.5, 3], opacity: [1, 0.5, 0] }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="absolute z-40 w-96 h-96 bg-primary rounded-full blur-[100px] pointer-events-none"
+                            className="absolute z-40 w-96 h-96 rounded-full pointer-events-none"
+                            style={{ background: "radial-gradient(circle, rgba(var(--primary-rgb), 0.8) 0%, transparent 70%)" }}
                         />
 
                         {/* Modal */}
