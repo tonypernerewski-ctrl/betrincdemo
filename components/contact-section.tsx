@@ -2,30 +2,14 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, Check, X } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const faqs = [
-    {
-        question: "What does a 'Growth Strategy' include?",
-        answer: "Our growth strategy is a comprehensive audit of your current sales processes, territory mapping, and a tailored plan to deploy our teams to high-opportunity markets.",
-    },
-    {
-        question: "How quickly can you deploy a team?",
-        answer: "We typically can have a fully trained squad on the ground within 14-21 days of strategy approval, depending on the market and complexity.",
-    },
-    {
-        question: "Do you handle B2B or B2C?",
-        answer: "Both. We have specialized divisions for high-touch B2B enterprise sales and high-volume B2C customer acquisition campaigns.",
-    },
-    {
-        question: "What is your pricing model?",
-        answer: "We operate primarily on performance-based models or hybrid retainer structures, ensuring our incentives are aligned with your revenue goals.",
-    },
-];
+
 
 export function ContactSection() {
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
+    // FAQ state removed
+
     const [formState, setFormState] = useState({
         businessName: "",
         name: "",
@@ -153,41 +137,13 @@ export function ContactSection() {
                         </form>
                     </div>
 
-                    {/* RIGHT COLUMN: FAQ */}
-                    <div className="space-y-8">
-                        <div>
-                            <h3 className="text-2xl font-bold mb-6 text-foreground">
-                                Frequently Asked Questions
-                            </h3>
-                            <div className="space-y-4">
-                                {faqs.map((faq, idx) => (
-                                    <div
-                                        key={idx}
-                                        className="border border-white/10 rounded-2xl bg-card overflow-hidden transition-colors hover:border-primary/30"
-                                    >
-                                        <button
-                                            onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                                            className="w-full flex items-center justify-between p-6 text-left"
-                                        >
-                                            <span className="font-medium text-lg pr-8">{faq.question}</span>
-                                            <span className={cn("shrink-0 transition-transform duration-300", openIndex === idx && "rotate-180")}>
-                                                {openIndex === idx ? <Minus className="text-primary" /> : <Plus className="text-muted-foreground" />}
-                                            </span>
-                                        </button>
-                                        <motion.div
-                                            initial={false}
-                                            animate={{ height: openIndex === idx ? "auto" : 0, opacity: openIndex === idx ? 1 : 0 }}
-                                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                                            style={{ overflow: "hidden" }}
-                                        >
-                                            <div className="p-6 pt-0 text-muted-foreground leading-relaxed">
-                                                {faq.answer}
-                                            </div>
-                                        </motion.div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                    {/* RIGHT COLUMN: CAL.COM EMBED */}
+                    <div className="h-full min-h-[600px] w-full bg-card border border-white/10 rounded-3xl overflow-hidden relative shadow-2xl">
+                        <iframe
+                            src="https://cal.com/anthony-pernerewski/30min?embed=true"
+                            style={{ width: "100%", height: "100%", border: "none" }}
+                            title="Book a call with Anthony"
+                        ></iframe>
                     </div>
 
                 </div>
