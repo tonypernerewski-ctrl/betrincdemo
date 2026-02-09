@@ -64,7 +64,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
      */
     return (
         <div className="overflow-hidden m-0 flex flex-nowrap whitespace-nowrap">
-            <motion.div className="flex flex-nowrap whitespace-nowrap gap-10" style={{ x }}>
+            <motion.div className="flex flex-nowrap whitespace-nowrap gap-10" style={{ x, willChange: "transform" }}>
                 {children}
                 {children}
                 {children}

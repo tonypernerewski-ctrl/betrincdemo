@@ -39,7 +39,12 @@ export function StatsScroll() {
             <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
                 {/* Background Decoration */}
                 <div className="absolute inset-0 bg-background/90 z-0">
-                    <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full opacity-30" />
+                    <div
+                        className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-30 rounded-full pointer-events-none"
+                        style={{
+                            background: "radial-gradient(circle, rgba(var(--primary-rgb), 0.4) 0%, transparent 70%)"
+                        }}
+                    />
                 </div>
 
                 <div className="relative z-10 w-full max-w-4xl px-6">

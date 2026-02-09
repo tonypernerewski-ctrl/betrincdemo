@@ -59,7 +59,7 @@ export function ContactSection() {
                 <div className="grid lg:grid-cols-2 gap-16 items-start">
 
                     {/* LEFT COLUMN: FORM */}
-                    <div className="bg-card/50 backdrop-blur-sm border border-white/10 p-8 md:p-10 rounded-3xl relative">
+                    <div className="bg-card border border-white/10 p-8 md:p-10 rounded-3xl relative">
                         <div className="mb-8">
                             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
                                 Ready to <span className="text-primary">Scale?</span>
@@ -200,7 +200,7 @@ export function ContactSection() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="absolute inset-0 bg-black/80 backdrop-blur-md"
+                            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
                             onClick={() => setShowSuccess(false)}
                         />
 
