@@ -42,6 +42,7 @@
   /* Electric Amber */
   --primary: #fbbf24;
   /* Amber 400 */
+  --primary-rgb: 251, 191, 36;
   --primary-foreground: #020617;
 
   --secondary: #1e293b;

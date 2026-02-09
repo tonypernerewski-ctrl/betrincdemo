@@ -174,21 +174,16 @@ export function ContactSection() {
                                                 {openIndex === idx ? <Minus className="text-primary" /> : <Plus className="text-muted-foreground" />}
                                             </span>
                                         </button>
-                                        <AnimatePresence>
-                                            {openIndex === idx && (
-                                                <motion.div
-                                                    initial={{ height: 0, opacity: 0 }}
-                                                    animate={{ height: "auto", opacity: 1 }}
-                                                    exit={{ height: 0, opacity: 0 }}
-                                                    transition={{ duration: 0.3 }}
-                                                    style={{ overflow: "hidden" }}
-                                                >
-                                                    <div className="p-6 pt-0 text-muted-foreground leading-relaxed">
-                                                        {faq.answer}
-                                                    </div>
-                                                </motion.div>
-                                            )}
-                                        </AnimatePresence>
+                                        <motion.div
+                                            initial={false}
+                                            animate={{ height: openIndex === idx ? "auto" : 0, opacity: openIndex === idx ? 1 : 0 }}
+                                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                                            style={{ overflow: "hidden" }}
+                                        >
+                                            <div className="p-6 pt-0 text-muted-foreground leading-relaxed">
+                                                {faq.answer}
+                                            </div>
+                                        </motion.div>
                                     </div>
                                 ))}
                             </div>
